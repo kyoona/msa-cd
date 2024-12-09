@@ -18,9 +18,10 @@ jobs:
         uses: azure/setup-kubectl@v1
         with:
           version: 'latest'
-
+          
       - name: Set up kubeconfig
         run: |
+          mkdir -p ~/.kube
           echo "${{ secrets.K8S_KUBECONFIG }}" > ~/.kube/config
           kubectl config view --flatten > ~/.kube/config
 
