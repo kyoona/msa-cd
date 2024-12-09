@@ -1,0 +1,30 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v1
+        with:
+          version: 'latest'
+
+      - name: Set up kubeconfig
+        run: |
+          echo "${{ secrets.K8S_KUBECONFIG }}" > ~/.kube/config
+          kubectl config view --flatten > ~/.kube/config
+
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install my-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest
+          helm upgrade --install my-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest
