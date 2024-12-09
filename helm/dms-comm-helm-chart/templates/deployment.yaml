@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: dms-chatting
+          image: "{{ .Values.dmsChatting.image.repository }}:{{ .Values.dmsChatting.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.dmsChatting.containerPort }}
+        - name: dms-bulletin
+          image: "{{ .Values.dmsBulletin.image.repository }}:{{ .Values.dmsBulletin.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.dmsBulletin.containerPort }}
+
