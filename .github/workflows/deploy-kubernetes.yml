@@ -27,5 +27,5 @@ jobs:
 
       - name: Deploy with Helm
         run: |
-          helm upgrade --install my-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest
-          helm upgrade --install my-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest
+          helm upgrade --install comm-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest
+          helm upgrade --install comm-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest
