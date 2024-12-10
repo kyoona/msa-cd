@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p ~/.kube
           echo "${{ secrets.K8S_KUBECONFIG }}" > ~/.kube/config
-          cat ~/.kube/config
+          kubectl config set-cluster my-cluster --insecure-skip-tls-verify=true
 
       - name: Deploy with Helm
         run: |
