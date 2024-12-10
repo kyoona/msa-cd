@@ -28,10 +28,10 @@ jobs:
       - name: Deploy with Helm
         run: |
           # dms-chatting 배포
-          helm install dms-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest || \
-          helm upgrade dms-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest
+          helm install dms-release ./helm/dms-comm-helm-chart -f ./helm/dms-comm-helm-chart/values.yaml --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest || \
+          helm upgrade dms-release ./helm/dms-comm-helm-chart -f ./helm/dms-comm-helm-chart/values.yaml --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-chatting,image.tag=latest
 
           # dms-bulletin 배포
-          helm install dms-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest || \
-          helm upgrade dms-release ./helm/dms-comm-helm-chart --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest
+          helm install dms-release ./helm/dms-comm-helm-chart -f ./helm/dms-comm-helm-chart/values.yaml --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest || \
+          helm upgrade dms-release ./helm/dms-comm-helm-chart -f ./helm/dms-comm-helm-chart/values.yaml --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/dms-bulletin,image.tag=latest
 
