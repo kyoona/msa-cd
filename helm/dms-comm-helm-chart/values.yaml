@@ -1,0 +1,29 @@
+releaseName: dms-comm
+
+service:
+  port: 8080
+  type: LoadBalancer
+
+replicaCount: 2
+
+dmsChatting:
+  image:
+    repository: kyoona/dms-chatting
+    tag: latest
+  containerPort: 8080
+
+dmsBulletin:
+  image:
+    repository: kyoona/dms-bulletin
+    tag: latest
+  containerPort: 8080
+
+ingress:
+  host: 15.165.79.3
+  paths:
+    - path: /api/members/*
+      pathType: Prefix
+    - path: /members/*/chatRooms
+      pathType: Prefix
+    - path: /chattings
+      pathType: Prefix
