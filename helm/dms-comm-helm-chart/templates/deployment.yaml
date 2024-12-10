@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: dms-release
   labels:
-    app: {{ .Release.Name }}
+    app: dms-release
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: dms-release
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: dms-release
     spec:
       containers:
         - name: dms-chatting
