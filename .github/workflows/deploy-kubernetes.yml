@@ -24,6 +24,7 @@ jobs:
           mkdir -p ~/.kube
           echo "${{ secrets.K8S_KUBECONFIG }}" > ~/.kube/config
           kubectl config view --flatten > ~/.kube/config
+          cat ~/.kube/config
 
       - name: Deploy with Helm
         run: |
