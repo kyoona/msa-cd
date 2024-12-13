@@ -1,13 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Values.ingressName }}
-  namespace: {{ .Values.namespace }}
+  name: comm-ingress
+  namespace: default
   annotations:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
-  ingressClassName: alb
+  ingressClassName: alb  # IngressClass로 'alb'를 사용
   rules:
     - http:
         paths:
@@ -15,13 +15,13 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.serviceName }}
+                name: dms-comm-service
                 port:
-                  number: {{ .Values.servicePort }}
+                  number: 80
           - path: /members
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.serviceName }}
+                name: dms-comm-service
                 port:
-                  number: {{ .Values.servicePort }}
+                  number: 80

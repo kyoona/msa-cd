@@ -1,26 +1,55 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dms-release
+  name: {{ .Values.deploymentName }}-deployment
   labels:
-    app: dms-release
+    app: {{ .Values.deploymentName }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: dms-release
+      app: {{ .Values.deploymentName }}
   template:
     metadata:
       labels:
-        app: dms-release
+        app: {{ .Values.deploymentName }}
     spec:
       containers:
-        - name: dms-chatting
-          image: "{{ .Values.dmsChatting.image.repository }}:{{ .Values.dmsChatting.image.tag }}"
+        - name: dms-bulletin-container
+          image: {{ .Values.bulletinImage }}
           ports:
-            - containerPort: {{ .Values.dmsChatting.containerPort }}
-        - name: dms-bulletin
-          image: "{{ .Values.dmsBulletin.image.repository }}:{{ .Values.dmsBulletin.image.tag }}"
+            - containerPort: 8081
+          env:
+            - name: MYSQL_URL
+              value: {{ .Values.mysqlUrl }}
+            - name: MYSQL_USERNAME
+              value: {{ .Values.mysqlUsername }}
+            - name: MYSQL_PASSWORD
+              value: {{ .Values.mysqlPassword }}
+        - name: dms-chatting-container
+          image: {{ .Values.chattingImage }}
           ports:
-            - containerPort: {{ .Values.dmsBulletin.containerPort }}
+            - containerPort: 8082
+          env:
+            - name: MYSQL_URL
+              value: {{ .Values.mysqlUrl }}
+            - name: MYSQL_USERNAME
+              value: {{ .Values.mysqlUsername }}
+            - name: MYSQL_PASSWORD
+              value: {{ .Values.mysqlPassword }}
+        - name: dms-gateway-container
+          image: {{ .Values.gatewayImage }}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MYSQL_URL
+              value: {{ .Values.mysqlUrl }}
+            - name: MYSQL_USERNAME
+              value: {{ .Values.mysqlUsername }}
+            - name: MYSQL_PASSWORD
+              value: {{ .Values.mysqlPassword }}
+            - name: BULLETIN_IP
+              value: {{ .Values.bulletinIp }}
+            - name: CHATTING_IP
+              value: {{ .Values.chattingIp }}
 

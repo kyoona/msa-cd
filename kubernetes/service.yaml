@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dms-comm-service
+spec:
+  selector:
+    app: dms-comm
+  ports:
+    - name: http-gateway
+      protocol: TCP
+      port: 80
+      targetPort: 8080   # Gateway 컨테이너로 전달
+    - name: http-bulletin
+      protocol: TCP
+      port: 8081
+      targetPort: 8081   # Bulletin 컨테이너로 전달
+    - name: http-chatting
+      protocol: TCP
+      port: 8082
+      targetPort: 8082   # Chatting 컨테이너로 전달
+  type: ClusterIP
+
