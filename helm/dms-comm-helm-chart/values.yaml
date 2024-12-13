@@ -1,29 +1,36 @@
-releaseName: dms-comm
-
-service:
-  port: 8080
-  type: LoadBalancer
-
+# Deployment 설정
+deploymentName: dms-comm
 replicaCount: 2
 
-dmsChatting:
-  image:
-    repository: kyoona/dms-chatting
-    tag: latest
-  containerPort: 8080
+mysqlUrl: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
+mysqlUsername: "admin"
+mysqlPassword: "bs135800"
 
-dmsBulletin:
-  image:
-    repository: kyoona/dms-bulletin
-    tag: latest
-  containerPort: 8080
+bulletinImage: "kyoona/dms-bulletin"
+chattingImage: "kyoona/dms-chatting"
+gatewayImage: "kyoona/dms-gateway"
 
-ingress:
-  host: 15.165.79.3
-  paths:
-    - path: /api/members/*
-      pathType: Prefix
-    - path: /members/*/chatRooms
-      pathType: Prefix
-    - path: /chattings
-      pathType: Prefix
+bulletinIp: "http://dms-comm-service:8081"
+chattingIp: "http://dms-comm-service:8082"
+
+# Ingress 설정
+ingressName: comm-ingress
+namespace: default
+serviceName: dms-comm-service
+servicePort: 80
+
+# Service 설정
+serviceName: dms-comm-service
+appName: dms-comm
+
+gatewayPort: 80
+gatewayTargetPort: 8080
+
+bulletinPort: 8081
+bulletinTargetPort: 8081
+
+chattingPort: 8082
+chattingTargetPort: 8082
+
+serviceType: ClusterIP
+
