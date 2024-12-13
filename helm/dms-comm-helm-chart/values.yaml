@@ -1,6 +1,6 @@
 # Deployment 설정
 deploymentName: dms-comm
-replicaCount: 2
+replicaCount: 1
 
 mysqlUrl: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
 mysqlUsername: "admin"
@@ -33,4 +33,17 @@ chattingPort: 8082
 chattingTargetPort: 8082
 
 serviceType: ClusterIP
+
+#hpa 설정
+hpa:
+  name: my-app-hpa
+  namespace: default
+  targetDeployment: my-app-deployment
+  minReplicas: 1
+  maxReplicas: 4
+  metrics:
+    cpu:
+      targetUtilization: 30
+    memory:
+      targetUtilization: 30
 
