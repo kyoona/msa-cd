@@ -36,9 +36,9 @@ serviceType: ClusterIP
 
 #hpa 설정
 hpa:
-  name: my-app-hpa
+  name: dms-hpa
   namespace: default
-  targetDeployment: my-app-deployment
+  targetDeployment: dms-comm
   minReplicas: 1
   maxReplicas: 4
   metrics:
