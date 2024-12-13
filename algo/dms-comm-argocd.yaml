@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dms-comm
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: comm-master
+  source:
+    repoURL: https://github.com/kyoona/dms-comm-cd
+    targetRevision: HEAD
+    path: helm/dms-comm-helm-chart
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
