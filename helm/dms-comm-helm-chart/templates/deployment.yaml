@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dms-bulletin-container
-          image: {{ .Values.bulletinImage }}
+          image: {{ .Values.bulletinImage }}:{{ .Values.bulletinImageTag }}
           ports:
             - containerPort: 8081
           env:
@@ -28,7 +28,7 @@ spec:
             - name: MYSQL_PASSWORD
               value: {{ .Values.mysqlPassword }}
         - name: dms-chatting-container
-          image: {{ .Values.chattingImage }}
+          image: {{ .Values.chattingImage }}:{{ .Values.chattingImageTag }}
           ports:
             - containerPort: 8082
           env:
@@ -39,7 +39,7 @@ spec:
             - name: MYSQL_PASSWORD
               value: {{ .Values.mysqlPassword }}
         - name: dms-gateway-container
-          image: {{ .Values.gatewayImage }}
+          image: {{ .Values.gatewayImage }}:{{ .Values.gatewayImageTag }}
           ports:
             - containerPort: 8080
           env:
