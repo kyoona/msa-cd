@@ -1,6 +1,6 @@
 #deployment 설정
 deploymentName: dms-comm-deployment
-replicaCount: 1
+replicaCount: 2
 
 mysqlUrl: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
 mysqlUsername: "admin"
