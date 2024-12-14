@@ -51,4 +51,4 @@ hpa:
   maxReplicas: 4
   metrics:
     cpu:
-      targetUtilization: 10
+      targetUtilization: 5
