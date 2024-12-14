@@ -1,3 +1,5 @@
+namespace: default
+
 #deployment 설정
 deploymentName: dms-comm-deployment
 replicaCount: 2
