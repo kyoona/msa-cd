@@ -1,4 +1,4 @@
- 설정
+#deployment 설정
 deploymentName: dms-comm-deployment
 replicaCount: 1
 
@@ -14,7 +14,7 @@ bulletinIp: "http://dms-comm-service:8081"
 chattingIp: "http://dms-comm-service:8082"
 
 # Ingress 설정
-ingressName: comm-ingress
+ingressName: dms-comm-ingress
 namespace: default
 serviceName: dms-comm-service
 servicePort: 80
@@ -36,7 +36,7 @@ serviceType: ClusterIP
 
 #hpa 설정
 hpa:
-  name: dms-hpa
+  name: dm-comms-hpa
   namespace: default
   targetDeployment: dms-comm-deployment
   minReplicas: 1
