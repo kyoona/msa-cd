@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.deploymentName }}
+        app: {{ .Values.appName }}
     spec:
       containers:
         - name: dms-bulletin-container
