@@ -1,5 +1,5 @@
-# Deployment 설정
-deploymentName: dms-comm
+ 설정
+deploymentName: dms-comm-deployment
 replicaCount: 1
 
 mysqlUrl: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
@@ -38,7 +38,7 @@ serviceType: ClusterIP
 hpa:
   name: dms-hpa
   namespace: default
-  targetDeployment: dms-comm
+  targetDeployment: dms-comm-deployment
   minReplicas: 1
   maxReplicas: 4
   metrics:
