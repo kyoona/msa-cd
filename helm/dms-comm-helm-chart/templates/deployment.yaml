@@ -27,6 +27,11 @@ spec:
               value: {{ .Values.mysqlUsername }}
             - name: MYSQL_PASSWORD
               value: {{ .Values.mysqlPassword }}
+          resources:
+            requests:
+              cpu: {{ .Values.bulletinRequestCpu }}
+            limits:
+              cpu: {{ .Values.bulletinMaxCpu }}
         - name: dms-chatting-container
           image: {{ .Values.chattingImage }}:{{ .Values.chattingImageTag }}
           ports:
@@ -38,6 +43,11 @@ spec:
               value: {{ .Values.mysqlUsername }}
             - name: MYSQL_PASSWORD
               value: {{ .Values.mysqlPassword }}
+          resources:
+            requests:
+              cpu: {{ .Values.chattingRequestCpu }}
+            limits:
+              cpu: {{ .Values.chattingMaxCpu }}
         - name: dms-gateway-container
           image: {{ .Values.gatewayImage }}:{{ .Values.gatewayImageTag }}
           ports:
@@ -53,4 +63,8 @@ spec:
               value: {{ .Values.bulletinIp }}
             - name: CHATTING_IP
               value: {{ .Values.chattingIp }}
-
+          resources:
+            requests:
+              cpu: {{ .Values.gatewayRequestCpu }}
+            limits:
+              cpu: {{ .Values.gatewayMaxCpu }}
