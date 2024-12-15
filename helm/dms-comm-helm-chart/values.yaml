@@ -58,7 +58,7 @@ hpa:
   maxReplicas: 4
   metrics:
     cpu:
-      targetUtilization: 30
+      targetUtilization: 100
   behavior:
     scaleDown:
       stabilizationSeconds: 30
