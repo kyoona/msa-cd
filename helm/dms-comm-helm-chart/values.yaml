@@ -10,12 +10,12 @@ namespace: default
 deploymentName: dms-comm-deployment
 replicaCount: 1 
 
-gatewayRequestCpu: 200
-gatewayMaxCpu: 400
-bulletinRequestCpu: 200
-bulletinMaxCpu: 400
-chattingRequestCpu: 200
-chattingMaxCpu: 400
+gatewayRequestCpu: 200m
+gatewayMaxCpu: 400m
+bulletinRequestCpu: 200m
+bulletinMaxCpu: 400m
+chattingRequestCpu: 200m
+chattingMaxCpu: 400m
 
 mysqlUrl: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
 mysqlUsername: "admin"
