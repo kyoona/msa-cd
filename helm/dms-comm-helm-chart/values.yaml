@@ -54,7 +54,7 @@ hpa:
   name: dm-comms-hpa
   namespace: default
   targetDeployment: dms-comm-deployment
-  minReplicas: 1
+  minReplicas: 2
   maxReplicas: 4
   metrics:
     cpu:
