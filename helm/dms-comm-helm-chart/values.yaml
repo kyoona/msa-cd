@@ -1,7 +1,7 @@
 #도커 이미지 태그 관리
-bulletinImageTag: 6382642a6139cf67f2bf4cc45197274e6fc1b63d
-chattingImageTag: 6382642a6139cf67f2bf4cc45197274e6fc1b63d
-gatewayImageTag: 6382642a6139cf67f2bf4cc45197274e6fc1b63d
+bulletinImageTag: ca819079851f9195674bbe71bbb7e0b95b0e83eb
+chattingImageTag: ca819079851f9195674bbe71bbb7e0b95b0e83eb
+gatewayImageTag: ca819079851f9195674bbe71bbb7e0b95b0e83eb
 
 #공통
 namespace: default
