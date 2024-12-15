@@ -10,7 +10,7 @@ namespace: default
 deploymentName: dms-comm-deployment
 replicaCount: 2
 
-gatewayRequestCpu: 6000m
+gatewayRequestCpu: 600m
 gatewayMaxCpu: 1
 bulletinRequestCpu: 300m
 bulletinMaxCpu: 1
