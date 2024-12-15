@@ -1,7 +1,7 @@
 #도커 이미지 태그 관리
-bulletinImageTag: ca819079851f9195674bbe71bbb7e0b95b0e83eb
-chattingImageTag: ca819079851f9195674bbe71bbb7e0b95b0e83eb
-gatewayImageTag: ca819079851f9195674bbe71bbb7e0b95b0e83eb
+bulletinImageTag: 6f295d6bdc363743fc9598021b886674a663ed14
+chattingImageTag: 6f295d6bdc363743fc9598021b886674a663ed14
+gatewayImageTag: 6f295d6bdc363743fc9598021b886674a663ed14
 
 #공통
 namespace: default
@@ -10,11 +10,11 @@ namespace: default
 deploymentName: dms-comm-deployment
 replicaCount: 2
 
-gatewayRequestCpu: 200m
+gatewayRequestCpu: 6000m
 gatewayMaxCpu: 1
-bulletinRequestCpu: 200m
+bulletinRequestCpu: 300m
 bulletinMaxCpu: 1
-chattingRequestCpu: 200m
+chattingRequestCpu: 300m
 chattingMaxCpu: 1
 
 mysqlUrl: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
