@@ -8,7 +8,7 @@ namespace: default
 
 #deployment 설정
 deploymentName: dms-comm-deployment
-replicaCount: 1 
+replicaCount: 2
 
 gatewayRequestCpu: 200m
 gatewayMaxCpu: 1
