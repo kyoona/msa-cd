@@ -25,3 +25,10 @@ spec:
                 name: {{ .Values.serviceName }}
                 port:
                   number: {{ .Values.servicePort }}
+          - path: /chatting
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.serviceName }}
+                port:
+                  number: {{ .Values.servicePort }}
