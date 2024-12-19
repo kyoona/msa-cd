@@ -1,13 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: comm-ingress
+  name: dms-comm-ingress
   namespace: default
   annotations:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
-  ingressClassName: alb  # IngressClass로 'alb'를 사용
+  ingressClassName: alb
   rules:
     - http:
         paths:
@@ -25,3 +25,11 @@ spec:
                 name: dms-comm-service
                 port:
                   number: 80
+          - path: /chatting
+            pathType: Prefix
+            backend:
+              service:
+                name: dms-comm-service
+                port:
+                  number: 80
+
