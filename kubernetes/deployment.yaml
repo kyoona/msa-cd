@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dms-comm-deployment
+  namespace: default
   labels:
     app: dms-comm
 spec:
@@ -16,39 +17,55 @@ spec:
     spec:
       containers:
         - name: dms-bulletin-container
-          image: kyoona/dms-bulletin
+          image: kyoona/dms-bulletin:6f295d6bdc363743fc9598021b886674a663ed14
           ports:
             - containerPort: 8081
           env:
             - name: MYSQL_URL
-              value: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
+              value: jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm
             - name: MYSQL_USERNAME
-              value: "admin"
+              value: admin
             - name: MYSQL_PASSWORD
-              value: "bs135800"
+              value: bs135800
+          resources:
+            requests:
+              cpu: 300m
+            limits:
+              cpu: 1
         - name: dms-chatting-container
-          image: kyoona/dms-chatting
+          image: kyoona/dms-chatting:6f295d6bdc363743fc9598021b886674a663ed14
           ports:
             - containerPort: 8082
           env:
             - name: MYSQL_URL
-              value: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
+              value: jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm
             - name: MYSQL_USERNAME
-              value: "admin"
+              value: admin
             - name: MYSQL_PASSWORD
-              value: "bs135800"
+              value: bs135800
+          resources:
+            requests:
+              cpu: 300m
+            limits:
+              cpu: 1
         - name: dms-gateway-container
-          image: kyoona/dms-gateway
+          image: kyoona/dms-gateway:6f295d6bdc363743fc9598021b886674a663ed14
           ports:
             - containerPort: 8080
           env:
             - name: MYSQL_URL
-              value: "jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm"
+              value: jdbc:mysql://dms-database.ch0icwqe8sr2.us-east-1.rds.amazonaws.com:3306/comm
             - name: MYSQL_USERNAME
-              value: "admin"
+              value: admin
             - name: MYSQL_PASSWORD
-              value: "bs135800"
+              value: bs135800
             - name: BULLETIN_IP
-              value: "http://dms-comm-service:8081"
+              value: http://dms-comm-service:8081
             - name: CHATTING_IP
-              value: "http://dms-comm-service:8082"
+              value: http://dms-comm-service:8082
+          resources:
+            requests:
+              cpu: 600m
+            limits:
+              cpu: 1
+
