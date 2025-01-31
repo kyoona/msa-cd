@@ -48,7 +48,7 @@ HPA Controller를 통해 CPU 및 메모리 사용량을 실시간 모니터링 �
 | Database | My SQL |
 | Infra | Docker, Kubernetes, Argo CD, Helm, Git Action, AWS EKS, AWS Loadbalancer |
 </br>
-<h2>아키텍처</h2>
+<h2>결과</h2>
 <img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
 Control plane에 해당하는 마스터 노드와 2개의 워커 노드로 쿠버네티스 클러스터가 구성되어 있습니다. <br/>
 각 워커 노드의 pod에는 라우팅을 위한 Gateway역할을 하는 서비스, 게시판 서비스, 채팅 서비스가 컨테이너로 실행됩니다.
