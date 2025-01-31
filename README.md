@@ -31,6 +31,7 @@ ReplicaSet을 사용하여 항상 지정된 개수의 Pod를 유지될 수 있�
 ### 4. 사용량에 따른 오토스케일링
 HPA Controller를 통해 CPU 및 메모리 사용량을 실시간 모니터링 하며, 설정된 임계치를 초과하면 자동으로 Pod를 확장, 감소하면 Pod 수를 줄여 불필요한 리소스 사용을 방지합니다.
 <br/>
+
 <h2 id="technologies">🛠️ 기술</h2>
 
 | Category | Stack |
