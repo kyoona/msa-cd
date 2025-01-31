@@ -1,7 +1,7 @@
 <h1>MSA서비스 CICD 프로젝트</h1>
 <p>
   간단한 커뮤니티 서비스를 '게시글 서비스', '채팅 서비스'로 분리하여 MSA를 구현하고 Docker, Kubernetes, Git Action을 활용하여 CICD파이프라인을 구축해봅니다. 
-  
+  <br/>
   <img width="100" alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
   모든 아이디어와 대화를 하나로, GPT와 연결된 새로운 커뮤니티 Connet</br>
   프리픽스 '$' 입력만으로 GPT 기능을 손쉽게 사용할 수 있으며, Discord와 Slack의 협업 기능을 제공합니다. </br>
