@@ -1,6 +1,6 @@
 <h1>MSA서비스 CICD 프로젝트</h1>
 <p>
-  <img src='https://github.com/user-attachments/assets/bbaf9bc7-0469-47fd-8116-79203291d049' width="100"/></img>
+  <img width="734" alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
   
   모든 아이디어와 대화를 하나로, GPT와 연결된 새로운 커뮤니티 Connet</br>
   프리픽스 '$' 입력만으로 GPT 기능을 손쉽게 사용할 수 있으며, Discord와 Slack의 협업 기능을 제공합니다. </br>
