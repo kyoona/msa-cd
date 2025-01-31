@@ -11,7 +11,7 @@
 | Database | My SQL |
 | Infra | Docker, Kubernetes, Argo CD, Helm, Git Action, AWS EKS, AWS Loadbalancer |
 </br>
-<h2>Architecture</h2>
+<h2>Deployment Architecture</h2>
 <img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
 ### 1. 그룹 채팅
 - 오픈 그룹, 프라이빗 그룹 등 다양한 조건으로 그룹을 생성할 수 있습니다.
