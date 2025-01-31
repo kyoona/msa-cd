@@ -55,5 +55,6 @@ Control plane에 해당하는 마스터 노드와 2개의 워커 노드로 쿠�
 쿠버네티스 클러스터는 AWS의 EKS를 통해 배포되었습니다.
 <img width="2026" alt="k8s-deault" src="https://github.com/user-attachments/assets/df71c9e2-47c5-42dc-9ed8-e45b1b974054" />
 
-
+</br>
+<h2>개선점</h2>
 
