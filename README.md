@@ -66,22 +66,4 @@ pub-sub구조를 통해 서비스간 결합도를 낮추어 OCP원칙을 지키�
 - 엔티티를 보수적으로 사용하기 위해 database에서 조회를 할때 dto를 통해 반환하였고 필요에 따라 fetch join을 활용하였습니다. 또한 엔티티를 파라미터로 넘기는 것에 있어 신중하게 구현하였습니다. 이를 통해 예상치 못한 lazy loading, dirty check를 통한 변경을 방지할 수 있었지만 JPA의 이점 또한 상쇄되는것 같았습니다. JPA의 기능들을 어디까지 사용해도 좋을지 trade-off에 대해 생각하고 개선해야 합니다. 또한 ORM기술이 아닌 SQl Mapper를 사용해도 괜찮을것 같다는 생각이 들었습니다.
 </br>
 
-<h2>📄문서</h2>
-
-| 종류   | URL                   |
-|--------|----------------------------------------------|
-| API 명세서 | https://thene.notion.site/API-1808113bb5c38076ac93dac21587e209?pvs=73 |
-| E-R 다이어그램   | https://thene.notion.site/E-R-1808113bb5c3807cbcc9ca6092287e30?pvs=73 |
-</br>
-
-<h2>👥팀원 및 일정</h2>
-2024.10.08 ~
-
-| 이름   | 역할      | GitHub 프로필 링크                             |
-|--------|-----------|----------------------------------------------|
-| 정우현 | 팀장, FE | [@woohyeonDev](https://github.com/woohyeonDev) |
-| Hoon   | FE        | [@simba-HOON](https://github.com/simba-HOON) |
-| 윤소은 | FE        | [@Dubabbi](https://github.com/Dubabbi)       |
-| 곽유나 | BE        | [@kyoona](https://github.com/kyoona)         |
-
 
