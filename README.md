@@ -20,14 +20,14 @@
 ### 1. CICD 파이프라인 구축
 CI와 CD는 프로세스와 목적이 다르기 때문에 CI레파지토리와 CD레파지토리를 분리하였습니다.
 <img alt="image" src="https://github.com/user-attachments/assets/8b367f98-0eb5-47bd-9cc3-f0ea4e6b9a18" />
-
-CI 프로세스
+<br/>
+CI 프로세스
 - CI레파지토리의 main브랜치에 코드 변화가 감지되면 Git Action이 트리거됩니다.
 - 레파지토리의 코드를 jar 파일로 빌드합니다.
 - Dockerfile을 통해 도커 이미지를 빌드합니다.
 - Docker hub에 빌드된 이미지를 푸시합니다.
 
-CD프로세스
+CD 프로세스
 - 배포할 도커 이미지의 태그, 배포 전략과 관련된 설정 파일을 관리합니다.
 - main 브랜치에 배포 설정 변경이 감지되면 Argo CD에서 이를 감지합니다.
 - 마스터 노드에서 실행되는 Argo CD가 CD레파지토리의 배포 설정대로 워커 노드를 동기화합니다.
