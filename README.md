@@ -21,7 +21,7 @@ CD 프로세스
 <br/>
 
 ### 2. 로드 밸런싱
-<img alt="image" src="https://github.com/user-attachments/assets/9491505c-7f99-4ac2-b4f0-d4b972df1420" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/9491505c-7f99-4ac2-b4f0-d4b972df1420" />
 
 AWS ALB를 사용하여 클라이언트 요청을 적절한 워커 노드의 Kubernetes Ingress로 전달하여 MSA 서비스 간 부하를 분산합니다.
 <br/>
