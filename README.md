@@ -12,7 +12,7 @@
 | Database | My SQL |
 | Infra | Docker, Kubernetes, Argo CD, Helm, Git Action, AWS EKS, AWS Loadbalancer |
 </br>
-<h2>Deployment Architecture</h2>
+<h2>배포 아키텍처</h2>
 <img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
 
 <h2>🛠️구현 사항</h2>
