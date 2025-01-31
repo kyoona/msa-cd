@@ -9,7 +9,7 @@
 | Framework | Spring Boot |
 | Library | Spring Data JPA, Query DSL |
 | Database | My SQL |
-| Infra | Docker, Kubernetes, Argo CD, Helm, Git Action |
+| Infra | Docker, Kubernetes, Argo CD, Helm, Git Action, AWS EKS, AWS Loadbalancer |
 </br>
 <h2>Architecture</h2>
 <img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
