@@ -25,6 +25,8 @@ AWS ALB를 사용하여 클라이언트 요청을 적절한 워커 노드의 Kub
 <br/>
 
 ### 3. 서비스 장애 복구
+<img width="341" alt="image" src="https://github.com/user-attachments/assets/f40aecec-0433-4ca0-8066-a1d7708311d3" />
+
 ReplicaSet을 사용하여 항상 지정된 개수의 Pod를 유지될 수 있도록합니다. 특정 Pod가 장애로 종료되면, 자동으로 새로운 Pod를 생성합니다.
 <br/>
 
