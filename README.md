@@ -1,5 +1,4 @@
 <h1>MSA서비스 CICD 프로젝트</h1>
-<p>
   간단한 커뮤니티 서비스를 '게시글 서비스', '채팅 서비스'로 분리하여 MSA를 구현하고 Docker, Kubernetes, Git Action을 활용하여 CICD파이프라인을 구축해봅니다. 
   </br>
 <h2 id="technologies">🛠️ 기술</h2>
@@ -11,17 +10,9 @@
 | Library | Spring Data JPA, Query DSL |
 | Database | My SQL |
 | Infra | Docker, Kubernetes, Argo CD, Helm, Git Action |
-
-  <br/>
-  <img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
-  모든 아이디어와 대화를 하나로, GPT와 연결된 새로운 커뮤니티 Connet</br>
-  프리픽스 '$' 입력만으로 GPT 기능을 손쉽게 사용할 수 있으며, Discord와 Slack의 협업 기능을 제공합니다. </br>
-  Connet 서비스 👉 http://woohyeon.duckdns.org/login 👈
-</p>
-
 </br>
-<h2>💻주요 화면 및 기능</h2>
-
+<h2>Architecture</h2>
+<img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
 ### 1. 그룹 채팅
 - 오픈 그룹, 프라이빗 그룹 등 다양한 조건으로 그룹을 생성할 수 있습니다.
 - 오픈 그룹을 입장하거나 프라이빗 그룹을 초대 받아 그룹을 입장할 수 있습니다.
