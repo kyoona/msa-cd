@@ -16,9 +16,9 @@
 <img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
 
 <h2>🛠️구현 사항</h2>
-### 1. CICD 파이프라인 구축
-![CICD파이프라인1](https://github.com/user-attachments/assets/8b367f98-0eb5-47bd-9cc3-f0ea4e6b9a18)
 
+### 1. CICD 파이프라인 구축
+<img alt="image" src="https://github.com/user-attachments/assets/8b367f98-0eb5-47bd-9cc3-f0ea4e6b9a18" />
 
 - 오픈 그룹, 프라이빗 그룹 등 다양한 조건으로 그룹을 생성할 수 있습니다.
 - 오픈 그룹을 입장하거나 프라이빗 그룹을 초대 받아 그룹을 입장할 수 있습니다.
