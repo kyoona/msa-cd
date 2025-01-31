@@ -20,6 +20,7 @@
 ### 1. CICD 파이프라인 구축
 CI와 CD는 프로세스와 목적이 다르기 때문에 CI레파지토리와 CD레파지토리를 분리하였습니다.
 <img alt="image" src="https://github.com/user-attachments/assets/8b367f98-0eb5-47bd-9cc3-f0ea4e6b9a18" />
+
 CI레파지토리
 - main브랜치에 코드 변화가 감지되면 Git Action이 트리거됩니다.
 - 레파지토리의 코드를 jar 파일로 빌드합니다.
