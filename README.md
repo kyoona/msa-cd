@@ -1,24 +1,7 @@
 <h1>MSA서비스 CICD 프로젝트</h1>
 간단한 커뮤니티 서비스를 '게시글 서비스', '채팅 서비스'로 분리하여 MSA를 구현하고 Docker, Kubernetes, Git Action을 활용하여 CICD파이프라인을 구축합니다.
 해당 레파지토리는 CD에 해당하는 레파지토리입니다.
-
-<h2 id="technologies">🛠️ 기술</h2>
-
-| Category | Stack |
-| --- | --- |
-| Language | Java |
-| Framework | Spring Boot |
-| Library | Spring Data JPA, Query DSL |
-| Database | My SQL |
-| Infra | Docker, Kubernetes, Argo CD, Helm, Git Action, AWS EKS, AWS Loadbalancer |
-</br>
-<h2>아키텍처</h2>
-<img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
-Control plane에 해당하는 마스터 노드와 2개의 워커 노드로 쿠버네티스 클러스터가 구성되어 있습니다. <br/>
-각 워커 노드의 pod에는 라우팅을 위한 Gateway역할을 하는 서비스, 게시판 서비스, 채팅 서비스가 컨테이너로 실행됩니다.
-쿠버네티스 클러스터는 AWS의 EKS를 통해 배포되었습니다.
-<img width="2026" alt="k8s-deault" src="https://github.com/user-attachments/assets/df71c9e2-47c5-42dc-9ed8-e45b1b974054" />
-
+프로젝트 목적은 다음과 같습니다.
 <h2>🛠️구현 사항</h2>
 
 ### 1. CICD 파이프라인 구축
@@ -38,11 +21,30 @@ CD 프로세스
 - 마스터 노드에서 실행되는 Argo CD가 CD레파지토리의 배포 설정대로 워커 노드를 동기화합니다.
 
 ### 2. 로드 밸런싱
-- 친구 요청, 차단 등의 기능을 제공합니다.
+- HPA Controller를 
 - 1:1 채팅 기능을 제공합니다. 차단된 유저에게는 채팅을 전송할 수 없습니다.
 
 ### 3. 서비스 장애 복구
-- 기존 GPT 채팅 서비스를 Connet에서 동일하게 사용할 수 있습니다.
+Replica Set을 통해 
+
+### 4. 사용량에 따른 오토스케일링
+
+<h2 id="technologies">🛠️ 기술</h2>
+
+| Category | Stack |
+| --- | --- |
+| Language | Java |
+| Framework | Spring Boot |
+| Library | Spring Data JPA, Query DSL |
+| Database | My SQL |
+| Infra | Docker, Kubernetes, Argo CD, Helm, Git Action, AWS EKS, AWS Loadbalancer |
 </br>
+<h2>아키텍처</h2>
+<img alt="image" src="https://github.com/user-attachments/assets/547b26d9-795a-459e-ab56-fe724d58edf8" />
+Control plane에 해당하는 마스터 노드와 2개의 워커 노드로 쿠버네티스 클러스터가 구성되어 있습니다. <br/>
+각 워커 노드의 pod에는 라우팅을 위한 Gateway역할을 하는 서비스, 게시판 서비스, 채팅 서비스가 컨테이너로 실행됩니다.
+쿠버네티스 클러스터는 AWS의 EKS를 통해 배포되었습니다.
+<img width="2026" alt="k8s-deault" src="https://github.com/user-attachments/assets/df71c9e2-47c5-42dc-9ed8-e45b1b974054" />
+
 
 
