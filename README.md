@@ -21,14 +21,14 @@
 CI와 CD는 프로세스와 목적이 다르기 때문에 CI레파지토리와 CD레파지토리를 분리하였습니다.
 <img alt="image" src="https://github.com/user-attachments/assets/8b367f98-0eb5-47bd-9cc3-f0ea4e6b9a18" />
 CI레파지토리
-- main브랜치에 코드 변화가 감지되면 Git Action이 trigger됩니다.
+- main브랜치에 코드 변화가 감지되면 Git Action이 트리거됩니다.
 - 레파지토리의 코드를 jar 파일로 빌드합니다.
 - Dockerfile을 통해 도커 이미지를 빌드합니다.
 - Docker hub에 빌드된 이미지를 푸시합니다.
 CD레파지토리
+- 배포할 도커 이미지의 태그, 배포 전략과 관련된 설정 파일을 관리합니다.
+- main 브랜치에 배포 설정 변경이 감지되면 Git action이 트리거됩니다.
 - 
-- 레파지토리의 코드를 jar 파일로 build합니다.
-- Dockerfile을 통해 jar파일을 통해 애플리케이션을 실행하는
 - 
 ### 2. 로드 밸런싱
 - 친구 요청, 차단 등의 기능을 제공합니다.
